@@ -14,6 +14,17 @@ window.addEventListener("load", (event) => {
     }
   }
 
+  body.addEventListener(
+    "touchmove",
+    function (event) {
+      if (timeline.classList.contains("active")) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    },
+    false
+  );
+
   timelineButton.addEventListener("click", function (e) {
     if (timeline.classList.contains("active")) {
       body.classList.remove("disable-touch-scroll");

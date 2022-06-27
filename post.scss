@@ -112,30 +112,31 @@
     padding: $grid * 6 $grid * 5;
   }
 
-  p {
+  > p {
     font-weight: 300;
-  }
 
-  b {
-    font-weight: 500;
-  }
-
-  a {
-    color: var(--color-orange);
-    text-decoration: underline;
-
-    &:visited {
-      color: var(--color-orange-dark);
+    b {
+      font-weight: 500;
     }
 
-    @media (hover: hover) {
-      &:hover {
-        text-decoration: none;
+    a {
+      color: var(--color-orange);
+      border-bottom: 1px solid var(--color-orange);
+
+      &:visited {
+        color: var(--color-orange-dark);
+        border-color: var(--color-orange-dark);
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          border: 0;
+        }
       }
     }
   }
 
-  h2 {
+  > h2 {
     margin-top: $grid * 2;
     margin-bottom: $grid;
     font-size: 24px;
@@ -146,6 +147,13 @@
       line-height: 1.2;
       margin-top: $grid * 3;
       margin-bottom: $grid * 2;
+    }
+  }
+
+  > article {
+    margin: $grid * 2 0;
+    @include respond-to(medium) {
+      margin: $grid * 3 0;
     }
   }
 

@@ -1,0 +1,792 @@
+@import "mixins";
+@font-face {
+  font-family: "Dela Gothic One";
+  src: url("/fonts/delagothicone-regular-webfont.woff2") format("woff2"),
+    url("/fonts/delagothicone-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+$baseTransitionStyle: cubic-bezier(0.66, 0, 0.07, 1);
+$accentFont: "Dela Gothic One", cursive;
+$mainFont: "Jost", sans-serif;
+$grid: 16px;
+
+:root {
+  --grid: 20px;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-grey: #edecec;
+  --color-grey-dark: #8d8d8d;
+  --color-orange: #ff5a26;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-black);
+  margin: 0;
+  padding: 0;
+  font-family: $mainFont;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+
+  @include respond-to(xl-large) {
+    font-size: 24px;
+  }
+
+  // @include respond-to(xxl-large) {
+  //   font-size: 32px;
+  // }
+
+  > .body-wrapper {
+    margin: auto;
+    max-width: $sizeXXL;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin-top: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: $accentFont;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.timeline-button {
+  position: fixed;
+  z-index: 2;
+  bottom: $grid;
+  right: $grid;
+  width: 80px;
+
+  @include respond-to(medium) {
+    bottom: $grid * 2;
+    right: $grid * 2;
+  }
+
+  @include respond-to(large) {
+    display: none;
+  }
+}
+
+nav {
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  text-transform: uppercase;
+  padding: $grid;
+  width: 100%;
+  max-width: $sizeXXL;
+  background: var(--color-black);
+
+  @include respond-to(medium) {
+    padding: $grid/2 * 3;
+  }
+
+  &::before {
+    content: "";
+    box-shadow: 0 -$grid/2 * 3 0 0 var(--color-black);
+    width: $grid/2 * 6;
+    border-top-left-radius: $grid/2 * 3;
+    height: $grid/2 * 6;
+    bottom: -$grid/2 * 6;
+    left: 0;
+    position: absolute;
+    background-color: transparent;
+    pointer-events: none;
+
+    @include respond-to(large) {
+      box-shadow: 0 -$grid * 3 0 0 var(--color-black);
+      width: $grid * 6;
+      border-top-left-radius: $grid * 3;
+      height: $grid * 6;
+      bottom: -$grid * 6;
+    }
+
+    @include respond-to(xl-large) {
+      box-shadow: 0 -$grid * 5 0 0 var(--color-black);
+      width: $grid * 10;
+      border-top-left-radius: $grid * 5;
+      height: $grid * 10;
+      bottom: -$grid * 10;
+    }
+  }
+
+  &::after {
+    content: "";
+    box-shadow: 0 0 -$grid/2 * 3 0 var(--color-black);
+    width: $grid/2 * 6;
+    border-top-right-radius: $grid/2 * 3;
+    height: $grid/2 * 6;
+    bottom: -$grid/2 * 6;
+    right: 0;
+    position: absolute;
+    background-color: transparent;
+    pointer-events: none;
+
+    @include respond-to(large) {
+      box-shadow: 0 0 -$grid * 3 0 var(--color-black);
+      width: $grid * 6;
+      border-top-right-radius: $grid * 3;
+      height: $grid * 6;
+      bottom: -$grid * 6;
+    }
+
+    @include respond-to(xl-large) {
+      box-shadow: 0 0 -$grid * 5 0 var(--color-black);
+      width: $grid * 10;
+      border-top-right-radius: $grid * 5;
+      height: $grid * 10;
+      bottom: -$grid * 10;
+    }
+  }
+
+  .home {
+    font-family: $accentFont;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: -0.02em;
+    color: var(--color-white);
+    opacity: 0.6;
+  }
+
+  .about {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.07em;
+    color: var(--color-white);
+    opacity: 0.6;
+  }
+}
+
+main {
+  background: var(--color-grey);
+
+  .intro {
+    position: relative;
+
+    @include respond-to(large) {
+      &::before {
+        content: "";
+
+        position: absolute;
+        right: 0;
+        background: var(--color-white);
+        width: 400px;
+        height: 100%;
+      }
+    }
+
+    @include respond-to(xl-large) {
+      &::before {
+        width: 480px;
+      }
+    }
+
+    h1 {
+      padding: $grid;
+      padding-top: $grid * 3;
+      font-size: 28px;
+
+      @include respond-to(medium) {
+        font-size: 56px;
+        padding: $grid * 2;
+      }
+
+      @include respond-to(large) {
+        padding: $grid * 3;
+        padding-top: $grid * 4;
+      }
+
+      @include respond-to(xl-large) {
+        padding: $grid * 4;
+        font-size: 80px;
+      }
+
+      @include respond-to(xxl-large) {
+        font-size: 90px;
+      }
+    }
+
+    .logo {
+      position: absolute;
+      right: $grid;
+      top: $grid;
+      width: 83px;
+
+      @include respond-to(large) {
+        width: 150px;
+        top: $grid * 3;
+        right: 125px;
+      }
+
+      @include respond-to(xl-large) {
+        width: 200px;
+        right: 140px;
+        top: $grid * 4;
+      }
+    }
+
+    .image {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      border-radius: $grid/2 * 3;
+      margin: $grid 0;
+
+      @include respond-to(medium) {
+        margin: 0;
+        border-radius: $grid * 3;
+        height: 360px;
+      }
+
+      @include respond-to(xl-large) {
+        border-radius: $grid * 5;
+        height: 440px;
+      }
+
+      @include respond-to(xxl-large) {
+        height: 500px;
+      }
+
+      img {
+        @include respond-to(medium) {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  .cols {
+    @include respond-to(large) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    > .col-left {
+      @include respond-to(large) {
+        width: calc(100% - 400px);
+      }
+
+      @include respond-to(xl-large) {
+        width: calc(100% - 480px);
+      }
+    }
+
+    > .col-right {
+      display: none;
+
+      @include respond-to(large) {
+        display: block;
+
+        width: 400px;
+      }
+
+      @include respond-to(xl-large) {
+        width: 480px;
+      }
+    }
+  }
+
+  .mission {
+    padding: $grid;
+
+    @include respond-to(medium) {
+      padding: $grid * 2;
+    }
+
+    @include respond-to(large) {
+      padding: $grid * 6 $grid * 4;
+    }
+
+    @include respond-to(xl-large) {
+      padding: $grid * 6 $grid * 5;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    > h2 {
+      margin-bottom: $grid;
+
+      @include respond-to(xl-large) {
+        width: 40%;
+        padding-right: $grid * 2;
+      }
+    }
+
+    > div {
+      max-width: 700px;
+      font-weight: 300;
+
+      @include respond-to(medium) {
+        font-size: 20px;
+      }
+
+      @include respond-to(xl-large) {
+        width: 60%;
+        font-size: 24px;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .search {
+    padding: $grid;
+
+    @include respond-to(medium) {
+      padding: 0 $grid * 2;
+      padding-bottom: 0;
+    }
+
+    @include respond-to(large) {
+      padding: 0 $grid * 4;
+      padding-bottom: 0;
+    }
+
+    @include respond-to(xl-large) {
+      padding: 0 $grid * 5;
+      padding-bottom: 0;
+    }
+
+    .wrapper {
+      position: relative;
+
+      .image {
+        position: absolute;
+        top: 50%;
+        left: $grid;
+        transform: translateY(-50%);
+        width: 24px;
+
+        @include respond-to(medium) {
+          width: 30px;
+          left: $grid/2 * 3;
+        }
+      }
+
+      input {
+        display: flex;
+
+        width: 100%;
+        font-size: 1rem;
+        font-family: $mainFont;
+        border: 0;
+        border-radius: 16px;
+        outline: none;
+        box-shadow: none;
+        resize: none;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        padding: $grid;
+        padding-left: $grid * 3;
+
+        @include respond-to(medium) {
+          border-radius: 24px;
+          padding: $grid/2 * 3;
+          padding-left: $grid * 4;
+          font-size: 20px;
+        }
+
+        @include respond-to(xl-large) {
+          font-size: 24px;
+        }
+
+        &:focus::-webkit-input-placeholder {
+          color: var(--color-black);
+        }
+
+        &:-webkit-autofill {
+          background: var(--color-grey-dark);
+          box-shadow: 0 0 0px 1000px var(--color-grey-dark) inset;
+          -webkit-box-shadow: 0 0 0px 1000px var(--color-grey-dark) inset;
+        }
+      }
+    }
+  }
+
+  .post-list {
+    padding: $grid;
+
+    @include respond-to(medium) {
+      padding: $grid * 2;
+      padding-top: $grid * 2;
+    }
+
+    @include respond-to(large) {
+      padding: $grid * 4;
+      padding-top: $grid * 2;
+    }
+
+    @include respond-to(xl-large) {
+      padding: $grid * 5;
+      padding-top: $grid * 2;
+    }
+
+    > article {
+      background-color: var(--color-white);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: $grid;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include respond-to(medium) {
+        border-radius: 24px;
+        margin-bottom: $grid * 2;
+      }
+
+      a {
+        display: block;
+        color: var(--color-black);
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      .image {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+
+        @include respond-to(medium) {
+          border-radius: 24px;
+        }
+
+        .issue-number {
+          position: absolute;
+          left: $grid/2 * 3;
+          bottom: $grid/2 * 3;
+          background-color: var(--color-orange);
+          font-weight: 500;
+          text-transform: uppercase;
+          border-radius: 100px;
+          padding: $grid/2 $grid;
+          font-size: 14px;
+
+          @include respond-to(medium) {
+            left: $grid * 2;
+            bottom: $grid * 2;
+          }
+        }
+      }
+
+      h2 {
+        padding: $grid/2 * 3;
+        margin-bottom: $grid/2;
+
+        @include respond-to(medium) {
+          padding: $grid * 2;
+        }
+      }
+    }
+  }
+}
+
+.timeline {
+  background: var(--color-white);
+  overflow-y: auto;
+  height: 100vh;
+
+  @include respond-to(large) {
+    padding: $grid * 6 $grid * 3;
+    padding-bottom: $grid * 8;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  &::-webkit-scrollbar {
+    @include respond-to(large) {
+      display: none;
+    }
+  }
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+  }
+
+  > .year {
+    position: relative;
+    margin-bottom: $grid * 3;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    > h3 {
+      position: relative;
+      z-index: 1;
+
+      background: var(--color-white);
+      padding-left: 50%;
+      padding-bottom: $grid/2;
+    }
+
+    &:before {
+      content: "";
+
+      position: absolute;
+      left: 50%;
+      top: 0;
+
+      width: 1px;
+      height: 100%;
+      background-color: var(--color-black);
+    }
+
+    > .horizontal-sep {
+      position: relative;
+      height: 12px;
+      border-left: 1px solid var(--color-black);
+      border-right: 1px solid var(--color-black);
+      margin-left: 25%;
+      margin-bottom: $grid * 3;
+
+      &:before {
+        content: "";
+
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        transform: translateY(-50%);
+        height: 1px;
+        background-color: var(--color-black);
+      }
+
+      &:after {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: var(--color-white);
+      }
+    }
+
+    > .event {
+      display: block;
+
+      font-size: 12px;
+      line-height: 1.2;
+
+      @include respond-to(large) {
+        font-size: 14px;
+      }
+
+      &:hover {
+        .title {
+          color: var(--color-orange);
+        }
+        .circle:before {
+          background-color: var(--color-orange);
+          border-color: var(--color-orange);
+        }
+      }
+
+      &:nth-child(odd) {
+        text-align: right;
+        padding-right: 50%;
+        margin-right: $grid * 2;
+
+        .circle {
+          .line {
+            left: -$grid;
+          }
+
+          &::after {
+            left: calc(50% + 1px);
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        padding-left: 50%;
+        margin-left: $grid * 2;
+
+        .circle {
+          .line {
+            right: -$grid;
+          }
+          &::after {
+            right: 50%;
+          }
+        }
+      }
+
+      > .date {
+        color: var(--color-grey-dark);
+        margin-bottom: $grid/2;
+      }
+
+      > .title {
+        color: var(--color-black);
+      }
+
+      .circle {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        background: var(--color-white);
+        border-radius: 16px;
+        border: 1px solid var(--color-black);
+        width: 16px;
+        height: 16px;
+
+        .line {
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          transform: translateY(-50%);
+
+          height: 1px;
+          width: $grid;
+          background-color: var(--color-black);
+        }
+
+        &:after {
+          content: " ";
+          position: absolute;
+          width: 100%;
+          height: calc(100% + 2px);
+          margin-top: -1px;
+
+          background: var(--color-white);
+        }
+
+        &:before {
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          left: 50%;
+          content: "";
+
+          border-radius: 6px;
+          border: 1px solid var(--color-black);
+          width: 6px;
+          height: 6px;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  position: relative;
+  z-index: 1;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  width: 100%;
+  font-size: 14px;
+  padding: $grid;
+  line-height: 1.2;
+
+  @include respond-to(medium) {
+    font-size: 17px;
+    padding: $grid / 2 * 3;
+  }
+
+  span {
+    padding: 0 $grid/2;
+    opacity: 0.6;
+  }
+
+  &::before {
+    content: "";
+    box-shadow: 0 -$grid/2 * 3 0 0 var(--color-black);
+    width: $grid/2 * 6;
+    border-bottom-left-radius: $grid/2 * 3;
+    height: $grid/2 * 6;
+    top: -$grid/2 * 6;
+    left: 0;
+    position: absolute;
+    background-color: transparent;
+    pointer-events: none;
+
+    @include respond-to(large) {
+      box-shadow: 0 -$grid * 3 0 0 var(--color-black);
+      width: $grid * 6;
+      border-bottom-left-radius: $grid * 3;
+      height: $grid * 6;
+      top: -$grid * 6;
+    }
+
+    @include respond-to(xl-large) {
+      box-shadow: 0 -$grid * 5 0 0 var(--color-black);
+      width: $grid * 10;
+      border-bottom-left-radius: $grid * 5;
+      height: $grid * 10;
+      top: -$grid * 10;
+    }
+  }
+
+  &::after {
+    content: "";
+    box-shadow: $grid/2 * 3 0 0 0 var(--color-black);
+    width: $grid/2 * 6;
+    border-bottom-right-radius: $grid/2 * 3;
+    height: $grid/2 * 6;
+    top: -$grid/2 * 6;
+    right: 0;
+    position: absolute;
+    background-color: transparent;
+    pointer-events: none;
+
+    @include respond-to(large) {
+      box-shadow: $grid * 3 0 0 0 var(--color-black);
+      width: $grid * 6;
+      border-bottom-right-radius: $grid * 3;
+      height: $grid * 6;
+      top: -$grid * 6;
+    }
+
+    @include respond-to(xl-large) {
+      box-shadow: $grid * 5 0 0 0 var(--color-black);
+      width: $grid * 10;
+      border-bottom-right-radius: $grid * 5;
+      height: $grid * 10;
+      top: -$grid * 10;
+    }
+  }
+}

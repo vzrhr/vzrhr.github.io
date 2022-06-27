@@ -1,0 +1,48 @@
+$sizeXXL: 1920px;
+$sizeXL: 1440px;
+$sizeL: 1024px;
+$sizeM: 768px;
+$sizeS: 320px;
+
+@mixin respond-to($media) {
+  @if $media == small {
+    @media only screen and (min-width: ($sizeS + $grid*10)) {
+      @content;
+    }
+  } @else if $media == medium {
+    @media only screen and (min-width: $sizeM) {
+      @content;
+    }
+  } @else if $media == large {
+    @media only screen and (min-width: $sizeL) {
+      @content;
+    }
+  } @else if $media == xl-large {
+    @media only screen and (min-width: $sizeXL) {
+      @content;
+    }
+  } @else if $media == xxl-large {
+    @media only screen and (min-width: $sizeXXL) {
+      @content;
+    }
+  }
+}
+
+@mixin header-font-size($normal-size, $small-size, $medium-size, $large-size) {
+  font-family: $ui-font-family;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 0;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+  font-size: $normal-size;
+  @include respond-to(small) {
+    font-size: $small-size;
+  }
+  @include respond-to(medium) {
+    font-size: $medium-size;
+  }
+  @include respond-to(large) {
+    font-size: $large-size;
+  }
+}

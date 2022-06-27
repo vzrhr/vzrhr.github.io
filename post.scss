@@ -109,6 +109,39 @@
   @include respond-to(xl-large) {
     padding: $grid * 6 $grid * 5;
   }
+
+  b {
+    font-weight: 500;
+  }
+
+  a {
+    color: var(--color-orange);
+    text-decoration: underline;
+
+    &:visited {
+      color: var(--color-orange-dark);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  h2 {
+    margin-top: $grid * 2;
+    margin-bottom: $grid;
+    font-size: 17px;
+    line-height: 1.4;
+
+    @include respond-to(medium) {
+      font-size: 30px;
+      line-height: 1.2;
+      margin-top: $grid * 3;
+      margin-bottom: $grid * 2;
+    }
+  }
 }
 
 .related {

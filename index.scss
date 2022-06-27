@@ -24,6 +24,7 @@ $grid: 16px;
   --color-grey-dark: #8d8d8d;
   --color-grey-darkest: #252525;
   --color-orange: #ff5a26;
+  --color-orange-dark: #a92800;
 }
 
 * {
@@ -37,15 +38,19 @@ body {
   font-family: $mainFont;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  font-size: 16px;
+  font-size: 18px;
+
+  @include respond-to(large) {
+    font-size: 21px;
+  }
 
   @include respond-to(xl-large) {
     font-size: 24px;
   }
 
-  // @include respond-to(xxl-large) {
-  //   font-size: 32px;
-  // }
+  @include respond-to(xxl-large) {
+    font-size: 32px;
+  }
 
   > .body-wrapper {
     margin: auto;

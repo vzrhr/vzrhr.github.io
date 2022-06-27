@@ -1,0 +1,135 @@
+.post-header {
+  color: var(--color-white);
+
+  @include respond-to(medium) {
+    display: flex;
+    flex-wrap: wrap;
+
+    position: relative;
+
+    background: var(--color-grey-darkest);
+  }
+
+  .title {
+    position: relative;
+    z-index: 1;
+    background: var(--color-grey-darkest);
+    border-radius: $grid/2 * 3;
+    padding: $grid;
+    overflow: hidden;
+    margin-top: -$grid/2 * 3;
+
+    @include respond-to(medium) {
+      margin: 0;
+      border-radius: $grid * 3;
+      border-bottom-right-radius: 0;
+      padding: $grid * 2;
+      width: 50%;
+    }
+
+    @include respond-to(large) {
+      padding: $grid * 6 $grid * 4;
+    }
+
+    @include respond-to(xl-large) {
+      padding: $grid * 6 $grid * 5;
+      border-radius: $grid * 5;
+      border-bottom-right-radius: 0;
+    }
+
+    .copyright {
+      order: 0;
+      opacity: 0.6;
+      font-size: 12px;
+      margin-bottom: $grid * 3;
+
+      @include respond-to(medium) {
+        font-size: 14px;
+        margin-bottom: $grid * 6;
+      }
+    }
+
+    h1 {
+      font-size: 24px;
+
+      @include respond-to(medium) {
+        font-size: 36px;
+      }
+
+      @include respond-to(large) {
+        font-size: 40px;
+      }
+
+      @include respond-to(xl-large) {
+        font-size: 58px;
+      }
+
+      @include respond-to(xxl-large) {
+        font-size: 64px;
+      }
+    }
+  }
+
+  .image {
+    background: var(--color-grey-darkest);
+
+    @include respond-to(medium) {
+      position: absolute;
+      right: 0;
+      left: calc(50% - 16px * 3);
+
+      order: 1;
+      height: 100%;
+    }
+
+    @include respond-to(xl-large) {
+      left: calc(50% - 16px * 5);
+    }
+
+    img {
+      @include respond-to(medium) {
+        object-fit: cover;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.post-body {
+  padding: $grid;
+
+  @include respond-to(medium) {
+    padding: $grid * 2;
+  }
+
+  @include respond-to(large) {
+    padding: $grid * 6 $grid * 4;
+  }
+
+  @include respond-to(xl-large) {
+    padding: $grid * 6 $grid * 5;
+  }
+}
+
+.related {
+  h2 {
+    padding: 0 $grid;
+    margin-bottom: $grid;
+    font-size: 17px;
+    line-height: 1.4;
+
+    @include respond-to(medium) {
+      padding: 0 $grid * 2;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    @include respond-to(large) {
+      padding: 0 $grid * 4;
+    }
+
+    @include respond-to(xl-large) {
+      padding: 0 $grid * 5;
+    }
+  }
+}

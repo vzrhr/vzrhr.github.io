@@ -235,7 +235,7 @@
 
       @include respond-to(medium) {
         width: calc(100% - 100px);
-        padding-left: $grid;
+        padding-left: $grid/2 * 3;
       }
 
       .name {

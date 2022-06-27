@@ -46,12 +46,12 @@ body {
   }
 
   @include respond-to(xl-large) {
-    font-size: 24px;
-  }
-
-  @include respond-to(xxl-large) {
     font-size: 32px;
   }
+
+  // @include respond-to(xxl-large) {
+  //   font-size: 32px;
+  // }
 
   > .body-wrapper {
     margin: auto;

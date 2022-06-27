@@ -148,6 +148,10 @@
       margin-top: $grid * 3;
       margin-bottom: $grid * 2;
     }
+
+    @include respond-to(xl-large) {
+      font-size: 48px;
+    }
   }
 
   > article {
@@ -203,22 +207,36 @@
     }
   }
 
+  > .iframe-resizer {
+    > div {
+      border-radius: $grid/2 * 3;
+      overflow: hidden;
+      margin-bottom: $grid;
+
+      iframe {
+        display: block;
+        border: 0;
+        width: 100%;
+      }
+    }
+  }
+
   > .image {
     > div {
       border-radius: $grid/2 * 3;
       overflow: hidden;
       margin-bottom: $grid;
     }
+  }
 
-    > figcaption {
-      opacity: 0.6;
-      font-style: italic;
-      text-align: center;
-      font-size: 14px;
+  figcaption {
+    opacity: 0.6;
+    font-style: italic;
+    text-align: center;
+    font-size: 14px;
 
-      @include respond-to(medium) {
-        font-size: 24px;
-      }
+    @include respond-to(medium) {
+      font-size: 24px;
     }
   }
 
@@ -309,6 +327,8 @@
 
     @include respond-to(xl-large) {
       padding: 0 $grid * 5;
+
+      font-size: 48px;
     }
   }
 }

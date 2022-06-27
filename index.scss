@@ -307,6 +307,7 @@ main {
       padding: $grid;
       padding-top: $grid * 3;
       font-size: 28px;
+      letter-spacing: -0.05em;
 
       @include respond-to(medium) {
         font-size: 56px;

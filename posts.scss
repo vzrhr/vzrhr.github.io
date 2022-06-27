@@ -1,5 +1,4 @@
-.post-list,
-.post-body {
+.post-list {
   padding: $grid;
 
   @include respond-to(medium) {
@@ -15,7 +14,10 @@
     padding: $grid * 5;
     padding-top: $grid * 2;
   }
+}
 
+.post-list,
+.post-body {
   .post-item {
     @include respond-to(medium) {
       border-radius: $grid/2 * 3;

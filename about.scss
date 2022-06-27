@@ -1,0 +1,75 @@
+.page-about {
+  @include respond-to(medium) {
+    display: flex;
+    flex-wrap: wrap;
+
+    height: calc(100vh - 64px * 2);
+    overflow-y: auto;
+  }
+
+  div {
+    padding: $grid * 2 $grid;
+
+    @include respond-to(medium) {
+      width: 50%;
+      padding: $grid * 2;
+    }
+
+    @include respond-to(large) {
+      padding: $grid * 3;
+      padding-top: $grid * 4;
+    }
+
+    @include respond-to(xl-large) {
+      padding: $grid * 4;
+    }
+
+    &:first-child {
+      border-bottom-left-radius: $grid/2 * 3;
+      border-bottom-right-radius: $grid/2 * 3;
+      background-color: var(--color-grey-darkest);
+      color: var(--color-white);
+
+      @include respond-to(medium) {
+        border-radius: 0;
+      }
+
+      p {
+        margin-bottom: 0;
+        font-weight: 500;
+      }
+    }
+
+    &:last-child {
+      font-weight: 300;
+    }
+  }
+
+  p {
+    @include respond-to(medium) {
+      font-size: 24px;
+    }
+
+    @include respond-to(large) {
+      font-size: 32px;
+    }
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: $grid;
+
+    @include respond-to(medium) {
+      font-size: 50px;
+      margin-bottom: $grid * 2;
+    }
+
+    @include respond-to(xl-large) {
+      font-size: 80px;
+    }
+
+    @include respond-to(xxl-large) {
+      font-size: 90px;
+    }
+  }
+}

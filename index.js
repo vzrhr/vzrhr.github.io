@@ -27,8 +27,13 @@ window.addEventListener("load", (event) => {
   });
 
   setTimelineFixed(window.scrollY);
-  document.addEventListener("resize", function (e) {
+  window.addEventListener("resize", function (e) {
     setTimelineFixed(window.scrollY);
+    if (window.innerWidth >= 1024) {
+      body.classList.remove("disable-touch-scroll");
+      timeline.classList.remove("active");
+      timelineButton.classList.remove("active");
+    }
   });
 
   document.addEventListener("scroll", function (e) {

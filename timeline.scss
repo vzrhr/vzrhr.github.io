@@ -24,8 +24,15 @@
     position: fixed;
     z-index: 1;
     top: 0;
+    right: 0;
 
     display: block;
+
+    padding-bottom: $grid * 8;
+
+    @include respond-to(medium) {
+      width: 50%;
+    }
   }
 
   &.fixed {

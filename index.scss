@@ -14,6 +14,7 @@ $grid: 16px;
 
 @import "post";
 @import "timeline";
+@import "about";
 
 :root {
   --grid: 20px;
@@ -244,7 +245,7 @@ nav {
     font-size: 13px;
     letter-spacing: -0.02em;
     color: var(--color-white);
-    opacity: 0.6;
+    opacity: 0.7;
 
     @include respond-to(medium) {
       position: absolute;
@@ -265,7 +266,7 @@ nav {
     font-size: 14px;
     letter-spacing: 0.07em;
     color: var(--color-white);
-    opacity: 0.6;
+    opacity: 0.5;
   }
 }
 
@@ -616,6 +617,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 
   position: relative;
   z-index: 1;
@@ -624,11 +626,12 @@ footer {
   width: 100%;
   font-size: 14px;
   padding: $grid;
+  height: $grid * 4;
   line-height: 1.2;
 
   @include respond-to(medium) {
     font-size: 17px;
-    padding: $grid / 2 * 3;
+    padding: $grid $grid / 2 * 3;
   }
 
   span {

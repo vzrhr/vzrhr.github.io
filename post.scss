@@ -235,7 +235,15 @@
     text-align: center;
     font-size: 14px;
 
-    @include respond-to(medium) {
+    @include respond-to(large) {
+      font-size: 18px;
+    }
+
+    @include respond-to(xl-large) {
+      font-size: 21px;
+    }
+
+    @include respond-to(xxl-large) {
       font-size: 24px;
     }
   }

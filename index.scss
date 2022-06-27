@@ -558,7 +558,7 @@ main {
   background: var(--color-white);
   overflow-y: auto;
   height: 100vh;
-  padding: $grid * 2 $grid;
+  padding: $grid * 6 $grid;
 
   @include respond-to(large) {
     display: block;
@@ -577,7 +577,7 @@ main {
   &.active {
     position: fixed;
     z-index: 1;
-    top: 64px;
+    top: 0;
 
     display: block;
   }

@@ -558,6 +558,7 @@ main {
   background: var(--color-white);
   overflow-y: auto;
   height: 100vh;
+  width: 100%;
   padding: $grid * 6 $grid;
 
   @include respond-to(large) {

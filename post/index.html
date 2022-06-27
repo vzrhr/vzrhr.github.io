@@ -16,7 +16,7 @@
 
 <body>
   <div class="body-wrapper">
-    <nav>
+    <nav class="nav-inner-page">
       <a class="home" href="/">Настоящая история России</a>
       <a class="about" href="/about">О проекте</a>
     </nav>
@@ -26,7 +26,8 @@
       </header>
       <div class="cols">
         <div class="col col-left">
-          <section class="mission">
+          <!-- post body -->
+          <section class="post-body">
             <p>
               Происходящее сегодня на Украине было спровоцировано более ста лет назад — по крайней мере, именно такой
               вывод можно
@@ -37,39 +38,36 @@
             </p>
           </section>
 
-          <section class="search">
-            <div class="wrapper">
-              <div class="image"><img src="/images/search.svg" /></div><input placeholder="Укажите дату или событие" />
-            </div>
-
+          <section class="related">
+            <h2>Смотрите также</h2>
+            <section class="post-list">
+              <article>
+                <a href="/post/" class="event">
+                  <div class="image"><img src="/images/hr.jpeg" />
+                    <div class="issue-number">Выпуск #1</div>
+                  </div>
+                  <h2>Как большевики отдали Украине исконно русские земли</h2>
+                </a>
+              </article>
+              <article>
+                <a href="/post/" class="event">
+                  <div class="image"><img src="/images/hr.jpeg" />
+                    <div class="issue-number">Выпуск #1</div>
+                  </div>
+                  <h2>Как большевики отдали Украине исконно русские земли</h2>
+                </a>
+              </article>
+              <article>
+                <a href="/post/" class="event">
+                  <div class="image"><img src="/images/hr.jpeg" />
+                    <div class="issue-number">Выпуск #1</div>
+                  </div>
+                  <h2>Как большевики отдали Украине исконно русские земли</h2>
+                </a>
+              </article>
+            </section>
           </section>
 
-          <section class="post-list">
-            <article>
-              <a href="/post/" class="event">
-                <div class="image"><img src="/images/hr.jpeg" />
-                  <div class="issue-number">Выпуск #1</div>
-                </div>
-                <h2>Как большевики отдали Украине исконно русские земли</h2>
-              </a>
-            </article>
-            <article>
-              <a href="/post/" class="event">
-                <div class="image"><img src="/images/hr.jpeg" />
-                  <div class="issue-number">Выпуск #1</div>
-                </div>
-                <h2>Как большевики отдали Украине исконно русские земли</h2>
-              </a>
-            </article>
-            <article>
-              <a href="/post/" class="event">
-                <div class="image"><img src="/images/hr.jpeg" />
-                  <div class="issue-number">Выпуск #1</div>
-                </div>
-                <h2>Как большевики отдали Украине исконно русские земли</h2>
-              </a>
-            </article>
-          </section>
         </div>
 
         <div class="col col-right">
@@ -200,6 +198,7 @@
       </div>
       <div class="timeline-button">
         <img src="/images/timeline_button.svg" />
+        <img src="/images/timeline_button_active.svg" />
       </div>
     </main>
     <footer><span>Все права защищены © 2022</span><span>Деловая газета «Взгляд»</span></footer>

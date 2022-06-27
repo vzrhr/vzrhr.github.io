@@ -120,11 +120,12 @@ nav {
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 
   text-transform: uppercase;
-  padding: 0 $grid;
+  padding: $grid/2 $grid;
+  // height: $grid * 2.5;
   height: $grid * 4;
   width: 100%;
   max-width: $sizeXXL;
@@ -132,6 +133,26 @@ nav {
 
   @include respond-to(medium) {
     padding: $grid/2 * 3;
+    // height: $grid * 4;
+  }
+
+  &.nav-inner-page {
+    justify-content: center;
+    // height: $grid * 4;
+
+    @include respond-to(medium) {
+      justify-content: flex-end;
+    }
+
+    a {
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+
+      @include respond-to(medium) {
+        width: auto;
+      }
+    }
   }
 
   &::before {
@@ -172,6 +193,7 @@ nav {
     bottom: -$grid/2 * 6;
     right: 0;
     position: absolute;
+    z-index: -1;
     background-color: transparent;
     pointer-events: none;
 
@@ -192,6 +214,18 @@ nav {
     }
   }
 
+  a {
+    display: flex;
+    align-items: center;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 1;
+        color: var(--color-orange);
+      }
+    }
+  }
+
   .home {
     font-family: $accentFont;
     font-weight: 400;
@@ -199,6 +233,17 @@ nav {
     letter-spacing: -0.02em;
     color: var(--color-white);
     opacity: 0.6;
+
+    @include respond-to(medium) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px;
+    }
+
+    @include respond-to(large) {
+      font-size: 24px;
+    }
   }
 
   .about {

@@ -1,4 +1,4 @@
-window.addEventListener("load", (event) => {
+window.addEventListener("DOMContentLoaded", (event) => {
   const body = document.querySelector("body");
   const timeline = document.querySelector(".timeline");
   const timelineButton = document.querySelector(".timeline-button");

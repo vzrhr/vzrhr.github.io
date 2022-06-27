@@ -218,6 +218,8 @@ nav {
     display: flex;
     align-items: center;
 
+    line-height: 1;
+
     @media (hover: hover) {
       &:hover {
         opacity: 1;

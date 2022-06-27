@@ -21,7 +21,6 @@
 
     @include respond-to(medium) {
       margin: 0;
-      border-radius: $grid * 3;
       border-bottom-right-radius: 0;
       padding: $grid * 2;
       width: 50%;
@@ -29,6 +28,7 @@
 
     @include respond-to(large) {
       padding: $grid * 6 $grid * 4;
+      border-radius: $grid * 3;
     }
 
     @include respond-to(xl-large) {

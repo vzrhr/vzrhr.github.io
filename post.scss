@@ -207,6 +207,14 @@
     }
   }
 
+  > .swiper-figure {
+    > div {
+      border-radius: $grid/2 * 3;
+      overflow: hidden;
+      margin-bottom: $grid;
+    }
+  }
+
   > .iframe-resizer {
     > div {
       border-radius: $grid/2 * 3;

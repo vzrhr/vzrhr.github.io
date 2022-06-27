@@ -11,6 +11,22 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap&subset=cyrillic"
     rel="stylesheet" />
+  <!-- swipper.js just for post page -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <script type="module">
+    import Swiper from 'https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js'
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoHeight: true,
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
   <script src="/index.js"></script>
 </head>
 
@@ -112,6 +128,19 @@
               начала ХХ веков и пытались выделить из него малороссов на основании использования в быту деревенских
               диалектов
               южнорусского типа.</p>
+            <figure class="swiper-figure">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="/images/photo.jpg" /></div>
+                  <div class="swiper-slide"><img src="/images/photo.jpg" /></div>
+                  <div class="swiper-slide"><img src="/images/photo.jpg" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+              <figcaption>Подпись к слайдеру</figcaption>
+            </figure>
             <p>К Малороссии (ее также называли Левобережной Украиной) относили три губернии — Черниговскую, Полтавскую
               и Харьковскую.
               Это были регионы, которые несколько столетий находились в составе России и были с ней неразрывно связаны.

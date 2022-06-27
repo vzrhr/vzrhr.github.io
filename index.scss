@@ -92,6 +92,25 @@ h4 {
   letter-spacing: -0.02em;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  // background-color: var(--color-grey);
+  // width: 60px !important;
+  // height: 60px !important;
+  // border-radius: 100px;
+
+  &:after {
+    color: var(--color-black);
+    // font-size: 26px !important;
+  }
+}
+
+.swiper-pagination-bullet {
+  &.swiper-pagination-bullet-active {
+    background: var(--color-black) !important;
+  }
+}
+
 .timeline-button {
   position: fixed;
   z-index: 2;

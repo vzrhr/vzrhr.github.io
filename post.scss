@@ -29,6 +29,7 @@
     @include respond-to(large) {
       padding: $grid * 6 $grid * 4;
       border-radius: $grid * 3;
+      border-bottom-right-radius: 0;
     }
 
     @include respond-to(xl-large) {
@@ -51,7 +52,7 @@
 
     h1 {
       font-size: 24px;
-
+      color: var(--color-grey);
       @include respond-to(medium) {
         font-size: 36px;
       }

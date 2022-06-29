@@ -147,7 +147,7 @@ nav {
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 
   text-transform: uppercase;
@@ -158,6 +158,7 @@ nav {
   background: var(--color-black);
 
   @include respond-to(medium) {
+    justify-content: flex-end;
     padding: $grid/2 * 3 $grid * 2;
   }
 
@@ -167,24 +168,6 @@ nav {
 
   @include respond-to(xl-large) {
     padding: $grid/2 * 3 $grid * 5;
-  }
-
-  &.nav-inner-page {
-    justify-content: center;
-
-    @include respond-to(medium) {
-      justify-content: flex-end;
-    }
-
-    a {
-      justify-content: center;
-      text-align: center;
-      width: 100%;
-
-      @include respond-to(medium) {
-        width: auto;
-      }
-    }
   }
 
   &::before {
@@ -247,15 +230,62 @@ nav {
   }
 
   a {
-    display: flex;
+    justify-content: center;
     align-items: center;
 
+    text-align: center;
+    width: 100%;
     line-height: 1;
+
+    @include respond-to(medium) {
+      width: auto;
+    }
 
     @media (hover: hover) {
       &:hover {
         opacity: 1;
         color: var(--color-orange);
+      }
+    }
+  }
+
+  &.nav-homepage {
+    justify-content: flex-end;
+
+    .home {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+
+      @include respond-to(medium) {
+        display: block;
+      }
+    }
+
+    a {
+      width: auto;
+    }
+  }
+
+  &.logo-visible {
+    justify-content: center;
+
+    @include respond-to(medium) {
+      justify-content: flex-end;
+    }
+
+    .home {
+      display: block;
+
+      opacity: 0.7;
+      visibility: visible;
+    }
+
+    a {
+      width: 100%;
+
+      @include respond-to(medium) {
+        width: auto;
       }
     }
   }

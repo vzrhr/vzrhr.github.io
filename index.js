@@ -1,9 +1,11 @@
 window.addEventListener("DOMContentLoaded", (event) => {
   const body = document.querySelector("body");
   const timeline = document.querySelector(".timeline");
+  const navHomepage = document.querySelector(".nav-homepage");
   const timelineButton = document.querySelector(".timeline-button");
   const colRight = document.querySelector(".col-right");
   const iframes = document.querySelectorAll(".iframe-resizer");
+  const introImage = document.querySelector(".intro .image");
   let lastKnownScrollPosition = 0;
   let ticking = false;
 
@@ -12,6 +14,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
       timeline.classList.add("fixed");
     } else {
       timeline.classList.remove("fixed");
+    }
+  }
+
+  function setLogoVisibleHomepage(scrollPos) {
+    if (navHomepage && scrollPos > introImage.offsetTop) {
+      navHomepage.classList.add("logo-visible");
+    } else {
+      navHomepage.classList.remove("logo-visible");
     }
   }
 
@@ -28,6 +38,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   });
 
   setTimelineFixed(window.scrollY);
+  setLogoVisibleHomepage(window.scrollY);
   window.addEventListener("resize", function (e) {
     [...iframes].map((iframe) => resizeIframe(iframe));
     setTimelineFixed(window.scrollY);
@@ -44,6 +55,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
     if (!ticking) {
       window.requestAnimationFrame(function () {
         setTimelineFixed(lastKnownScrollPosition);
+        setLogoVisibleHomepage(lastKnownScrollPosition);
+
         ticking = false;
       });
 

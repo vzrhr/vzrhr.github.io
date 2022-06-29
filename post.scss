@@ -53,6 +53,7 @@
     h1 {
       font-size: 24px;
       color: var(--color-grey);
+
       @include respond-to(medium) {
         font-size: 36px;
       }
@@ -98,19 +99,22 @@
 
 .post-body {
   padding: $grid;
-  margin-bottom: $grid * 2;
 
   @include respond-to(medium) {
     padding: $grid * 2;
-    margin-bottom: $grid * 3;
   }
 
   @include respond-to(large) {
     padding: $grid * 6 $grid * 4;
+    padding-bottom: $grid * 4;
   }
 
   @include respond-to(xl-large) {
     padding: $grid * 6 $grid * 5;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
   }
 
   > p {

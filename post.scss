@@ -212,6 +212,46 @@
     }
   }
 
+  > .image-grid {
+    > div {
+      @include respond-to(medium) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .image {
+        border-radius: $grid/2 * 3;
+        overflow: hidden;
+        margin-bottom: $grid;
+
+        @include respond-to(xl-large) {
+          margin-bottom: $grid/2 * 3;
+        }
+
+        &.col-2 {
+          @include respond-to(medium) {
+            width: calc(50% - 8px);
+          }
+
+          @include respond-to(xl-large) {
+            width: calc(50% - 16px);
+          }
+        }
+
+        &.col-3 {
+          @include respond-to(medium) {
+            width: calc(100% / 3 - 8px);
+          }
+
+          @include respond-to(xl-large) {
+            width: calc(100% / 3 - 16px);
+          }
+        }
+      }
+    }
+  }
+
   > .swiper-figure {
     > div {
       margin-bottom: $grid;

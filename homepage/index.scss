@@ -1,8 +1,9 @@
 $mainFont: "Noto Serif", serif;
 
-$max-width: 1280px;
-$min-width: 1024px;
 $grid: 15px;
+
+$max-width: 1280px;
+$min-width: 1024px - $grid * 2;
 
 $color-main: #111;
 $color-grey: #c4c4c4;

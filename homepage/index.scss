@@ -45,17 +45,20 @@ img {
   flex-wrap: wrap;
 }
 
+main {
+  padding: 0 $grid;
+}
+
 .max-width {
   margin: auto;
   max-width: $max-width;
   min-width: $min-width;
-  padding: 0 $grid;
 }
 
 .banner-240x400 {
-  border-bottom: 1px solid $color-grey;
-  padding-bottom: $grid;
-  margin-bottom: $grid;
+  // border-bottom: 1px solid $color-grey;
+  // padding-bottom: $grid;
+  margin-bottom: $grid * 2;
 
   &:before {
     content: "";
@@ -68,9 +71,9 @@ img {
 }
 
 .post {
-  border-bottom: 1px solid $color-grey;
-  padding-bottom: $grid;
-  margin-bottom: $grid;
+  // border-bottom: 1px solid $color-grey;
+  // padding-bottom: $grid;
+  margin-bottom: $grid * 2;
 
   &:last-child {
     border: 0;
@@ -83,6 +86,11 @@ img {
       font-size: 1.6rem;
       line-height: 1;
     }
+  }
+
+  &.no-image {
+    padding: $grid !important;
+    border: 1px solid $color-grey;
   }
 
   img {
@@ -118,9 +126,9 @@ img {
 }
 
 .opinion {
-  border-bottom: 1px solid $color-grey;
-  padding-bottom: $grid;
-  margin-bottom: $grid;
+  // border-bottom: 1px solid $color-grey;
+  // padding-bottom: $grid;
+  margin-bottom: $grid * 2;
 
   &:last-child {
     border: 0;
@@ -129,12 +137,13 @@ img {
   }
 
   .info {
-    width: calc(100% - 100px);
+    width: 80%;
     padding-right: $grid;
   }
 
   .image {
-    width: 100px;
+    width: 20%;
+    float: right;
   }
 
   .title {
@@ -167,13 +176,21 @@ header {
   margin-bottom: $grid * 2;
 }
 
+.full-width-banner {
+  background-color: $color-grey;
+  height: 100px;
+  margin-bottom: $grid * 2;
+  margin-left: -$grid;
+  margin-right: -$grid;
+}
+
 .top-row-news {
   border-bottom: 1px solid $color-grey;
   padding-bottom: $grid * 2;
-  margin-bottom: $grid;
+  margin-bottom: $grid * 2;
 
   a {
-    border-right: 1px solid $color-grey;
+    // border-right: 1px solid $color-grey;
     width: calc(100% / 6);
     padding: 0 $grid;
 
@@ -190,26 +207,26 @@ header {
 
 .section-1 {
   border-bottom: 1px solid $color-grey;
-  padding-bottom: $grid;
-  margin-bottom: $grid;
+  padding-bottom: $grid * 2;
+  margin-bottom: $grid * 2;
 
   .col-middle {
-    border-left: 1px solid $color-grey;
-    border-right: 1px solid $color-grey;
+    // border-left: 1px solid $color-grey;
+    // border-right: 1px solid $color-grey;
     width: calc(100% - 510px);
     padding: 0 $grid;
     margin: 0 $grid;
   }
 
   .top-column-news {
-    border-bottom: 1px solid $color-grey;
+    // border-bottom: 1px solid $color-grey;
     padding-bottom: $grid;
     margin-bottom: $grid;
 
     a {
       display: block;
 
-      margin-bottom: $grid;
+      margin-bottom: $grid/3 * 2;
 
       &:last-child {
         margin: 0;
@@ -224,15 +241,15 @@ header {
 
   .col-small {
     width: 180px;
-    border-left: 1px solid $color-grey;
+    // border-left: 1px solid $color-grey;
     padding-left: $grid;
   }
 }
 
 .section-2 {
   border-bottom: 1px solid $color-grey;
-  padding-bottom: $grid;
-  margin-bottom: $grid;
+  padding-bottom: $grid * 2;
+  margin-bottom: $grid * 2;
 
   h2 {
     font-family: arial;
@@ -246,7 +263,7 @@ header {
 
     .col-half {
       width: calc(50% - 15px);
-      border-left: 1px solid $color-grey;
+      // border-left: 1px solid $color-grey;
       padding-left: $grid;
       margin-left: $grid;
     }
@@ -254,13 +271,55 @@ header {
 }
 
 .section-3 {
-  h2 {
-    font-weight: normal;
-    text-align: center;
-    border-bottom: 1px solid $color-grey;
+  border-bottom: 1px solid $color-grey;
+  padding-bottom: $grid * 2;
+  margin-bottom: $grid * 2;
+
+  > h2 {
+    font-family: arial;
+    font-size: 12px;
     margin-top: 0;
-    padding-bottom: $grid;
     margin-bottom: $grid;
-    width: 100%;
+  }
+
+  .full-width {
+    margin-bottom: $grid * 2;
+
+    .post {
+      width: calc(100% / 4);
+      padding-right: $grid;
+
+      &:last-child {
+        padding: 0;
+      }
+    }
+  }
+
+  .left-column {
+    width: calc(100% - 240px);
+    padding-right: $grid;
+
+    .post {
+      width: calc(100% / 4 - 15px);
+      // padding-right: $grid;
+      margin-right: $grid;
+
+      // &:nth-child(1),
+      // &:nth-child(2),
+      // &:nth-child(3) {
+      //   width: calc(100% / 3 - 15px);
+      // }
+    }
+  }
+
+  .right-column {
+    width: 240px;
+
+    > h2 {
+      font-family: arial;
+      font-size: 12px;
+      margin-top: 0;
+      margin-bottom: $grid;
+    }
   }
 }

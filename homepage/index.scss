@@ -43,6 +43,7 @@ img {
 .flex {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 main {
@@ -56,8 +57,6 @@ main {
 }
 
 .banner-240x400 {
-  // border-bottom: 1px solid $color-grey;
-  // padding-bottom: $grid;
   margin-bottom: $grid * 2;
 
   &:before {
@@ -67,6 +66,19 @@ main {
     background: blue;
     width: 240px;
     height: 400px;
+  }
+}
+
+.banner-300x500 {
+  margin-bottom: $grid * 2;
+
+  &:before {
+    content: "";
+
+    display: block;
+    background: blue;
+    width: 300px;
+    height: 500px;
   }
 }
 
@@ -176,6 +188,11 @@ header {
   margin-bottom: $grid * 2;
 }
 
+footer {
+  background-color: $color-grey;
+  height: 100px;
+}
+
 .full-width-banner {
   background-color: $color-grey;
   height: 100px;
@@ -271,9 +288,9 @@ header {
 }
 
 .section-3 {
-  border-bottom: 1px solid $color-grey;
-  padding-bottom: $grid * 2;
-  margin-bottom: $grid * 2;
+  // border-bottom: 1px solid $color-grey;
+  // padding-bottom: $grid * 2;
+  margin-bottom: $grid * 4;
 
   > h2 {
     font-family: arial;
@@ -286,11 +303,12 @@ header {
     margin-bottom: $grid * 2;
 
     .post {
-      width: calc(100% / 4);
-      padding-right: $grid;
+      width: calc(100% / 4 - 15px);
+      // padding-right: $grid;
+      margin-right: $grid;
 
       &:last-child {
-        padding: 0;
+        margin-right: 0;
       }
     }
   }
@@ -301,14 +319,7 @@ header {
 
     .post {
       width: calc(100% / 4 - 15px);
-      // padding-right: $grid;
       margin-right: $grid;
-
-      // &:nth-child(1),
-      // &:nth-child(2),
-      // &:nth-child(3) {
-      //   width: calc(100% / 3 - 15px);
-      // }
     }
   }
 
@@ -321,5 +332,34 @@ header {
       margin-top: 0;
       margin-bottom: $grid;
     }
+  }
+}
+
+.section-photo {
+  margin-bottom: $grid * 4;
+
+  > h2 {
+    font-family: arial;
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: $grid;
+    width: 100%;
+  }
+
+  .col {
+    width: 50%;
+
+    &:first-child {
+      padding-right: $grid;
+    }
+
+    // &:last-child {
+    //   padding-left: $grid;
+    // }
+  }
+
+  .col-half {
+    width: calc(100% - 300px);
+    padding-left: $grid;
   }
 }

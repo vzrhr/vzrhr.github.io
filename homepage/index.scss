@@ -237,9 +237,9 @@ footer {
   }
 
   .top-column-news {
-    // border-bottom: 1px solid $color-grey;
-    padding-bottom: $grid;
-    margin-bottom: $grid;
+    border: 1px solid $color-grey;
+    padding: $grid;
+    margin-bottom: $grid * 2;
 
     a {
       display: block;

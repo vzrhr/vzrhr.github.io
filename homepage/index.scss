@@ -269,6 +269,14 @@ footer {
       display: block;
     }
   }
+
+  .col-240 {
+    @media only screen and (min-width: 1180px) {
+      .hide-on-1280 {
+        display: none;
+      }
+    }
+  }
 }
 
 .section-2 {
@@ -291,12 +299,20 @@ footer {
       // border-left: 1px solid $color-grey;
       padding-left: $grid;
       margin-left: $grid;
+
+      @media only screen and (min-width: 1280px) {
+        width: calc(45% - 15px);
+      }
     }
 
     .col-60-per {
       width: calc(60% - 15px);
       padding-left: $grid;
       margin-left: $grid;
+
+      @media only screen and (min-width: 1280px) {
+        width: calc(55% - 15px);
+      }
     }
   }
 }

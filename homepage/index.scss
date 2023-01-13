@@ -253,14 +253,21 @@ footer {
   }
 
   .col-big {
-    width: calc(100% - 180px);
-    padding-right: $grid;
+    @media only screen and (min-width: 1180px) {
+      width: calc(100% - 180px);
+      padding-right: $grid;
+    }
   }
 
   .col-small {
+    display: none;
     width: 180px;
     // border-left: 1px solid $color-grey;
     padding-left: $grid;
+
+    @media only screen and (min-width: 1180px) {
+      display: block;
+    }
   }
 }
 

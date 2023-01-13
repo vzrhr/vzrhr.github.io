@@ -286,9 +286,15 @@ footer {
   .col-big {
     width: calc(100% - 240px);
 
-    .col-half {
-      width: calc(50% - 15px);
+    .col-40-per {
+      width: calc(40% - 15px);
       // border-left: 1px solid $color-grey;
+      padding-left: $grid;
+      margin-left: $grid;
+    }
+
+    .col-60-per {
+      width: calc(60% - 15px);
       padding-left: $grid;
       margin-left: $grid;
     }

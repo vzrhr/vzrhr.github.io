@@ -137,7 +137,7 @@ main {
   }
 
   &.big-post {
-    a {
+    .title {
       font-size: 1.6rem;
       line-height: 1;
     }
@@ -165,7 +165,7 @@ main {
     font-size: 0.7rem;
   }
 
-  a {
+  .title {
     display: block;
     font-weight: bold;
     margin-bottom: $grid/3;
@@ -175,6 +175,10 @@ main {
     margin: 0;
     margin-bottom: $grid/3;
     color: $color-grey-dark;
+
+    .learn-more {
+      text-decoration: underline;
+    }
   }
 
   .date {
@@ -197,6 +201,7 @@ main {
 
   .image {
     width: 20%;
+    min-width: 50px;
     margin-left: $grid;
     margin-bottom: $grid/2;
     float: right;
@@ -206,6 +211,15 @@ main {
     display: block;
     font-weight: bold;
     margin-bottom: $grid/3;
+
+    .name {
+      display: block;
+
+      font-family: $sansFont;
+      color: $color-grey-dark;
+      font-weight: normal;
+      font-size: 0.8rem;
+    }
   }
 
   p {
@@ -216,6 +230,10 @@ main {
 
   .comments {
     font-size: 0.8rem;
+
+    a {
+      text-decoration: underline;
+    }
 
     span {
       opacity: 0.5;
@@ -338,14 +356,13 @@ footer {
   .col-big {
     width: calc(100% - 240px);
 
-    .col-40-per {
-      width: calc(40% - 15px);
-      // border-left: 1px solid $color-grey;
+    .col-left {
+      width: calc(45% - 15px);
       padding-left: $grid;
       margin-left: $grid;
 
       @media only screen and (min-width: 1280px) {
-        width: calc(45% - 15px);
+        width: calc(50% - 15px);
 
         .col-2 {
           .post {
@@ -363,13 +380,13 @@ footer {
       }
     }
 
-    .col-60-per {
-      width: calc(60% - 15px);
+    .col-right {
+      width: calc(55% - 15px);
       padding-left: $grid;
       margin-left: $grid;
 
       @media only screen and (min-width: 1280px) {
-        width: calc(55% - 15px);
+        width: calc(50% - 15px);
       }
     }
   }

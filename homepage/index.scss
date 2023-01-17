@@ -1,4 +1,5 @@
 $mainFont: "Noto Serif", serif;
+$sansFont: arial;
 
 $grid: 15px;
 
@@ -7,6 +8,9 @@ $min-width: 1024px - $grid * 2;
 
 $color-main: #111;
 $color-grey: #c4c4c4;
+$color-grey-light: #eee;
+$color-grey-dark: #656565;
+$color-red: #ed3f3a;
 
 * {
   box-sizing: border-box;
@@ -23,7 +27,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
-  line-height: 1.2;
+  line-height: 1.35;
 }
 
 a {
@@ -39,6 +43,46 @@ img {
   display: block;
 
   width: 100%;
+}
+
+.main-header {
+  margin-bottom: $grid * 2;
+
+  .vz-logo {
+    width: 160px;
+  }
+
+  .top-wrapper {
+    border-bottom: 1px solid $color-grey-light;
+    font-family: $sansFont;
+    padding: $grid/2 $grid;
+    color: $color-grey-dark;
+    font-size: 0.7rem;
+  }
+
+  .middle-wrapper {
+    padding: $grid;
+  }
+
+  .featured-categories {
+    background-color: $color-grey-light;
+    font-family: $sansFont;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: $grid/2 $grid;
+
+    .flex {
+      justify-content: flex-start;
+    }
+
+    a {
+      margin-right: $grid * 2;
+
+      &.active {
+        color: $color-red;
+      }
+    }
+  }
 }
 
 .flex {
@@ -115,7 +159,7 @@ main {
 
   .category {
     text-transform: uppercase;
-    font-family: arial;
+    font-family: $sansFont;
     margin-bottom: $grid/3;
     opacity: 0.5;
     font-size: 0.7rem;
@@ -130,11 +174,12 @@ main {
   .description {
     margin: 0;
     margin-bottom: $grid/3;
+    color: $color-grey-dark;
   }
 
   .date {
     text-transform: uppercase;
-    font-family: arial;
+    font-family: $sansFont;
     font-size: 0.55rem;
     margin-top: $grid;
     opacity: 0.5;
@@ -166,6 +211,7 @@ main {
   p {
     margin: 0;
     margin-bottom: $grid;
+    color: $color-grey-dark;
   }
 
   .comments {
@@ -187,12 +233,6 @@ main {
   width: 240px;
 }
 
-header {
-  background-color: $color-grey;
-  height: 100px;
-  margin-bottom: $grid * 2;
-}
-
 footer {
   background-color: $color-grey;
   height: 100px;
@@ -204,15 +244,19 @@ footer {
   margin-bottom: $grid * 2;
   margin-left: -$grid;
   margin-right: -$grid;
+
+  &.top {
+    margin: 0;
+  }
 }
 
 .top-row-news {
+  font-family: $sansFont;
   border-bottom: 1px solid $color-grey;
   padding-bottom: $grid * 2;
   margin-bottom: $grid * 2;
 
   a {
-    // border-right: 1px solid $color-grey;
     width: calc(100% / 6);
     padding: 0 $grid;
 
@@ -233,8 +277,6 @@ footer {
   margin-bottom: $grid * 2;
 
   .col-middle {
-    // border-left: 1px solid $color-grey;
-    // border-right: 1px solid $color-grey;
     width: calc(100% - 510px);
     padding: 0 $grid;
     margin: 0 $grid;
@@ -340,8 +382,8 @@ footer {
 }
 
 .popular {
-  background: #eee;
-  padding: $grid;
+  background: $color-grey-light;
+  padding: $grid + 15px;
   margin-bottom: $grid * 2;
 
   h2 {
@@ -354,6 +396,7 @@ footer {
 
   .post {
     width: calc((100% - 90px) / 4);
+    margin: 0;
   }
 }
 

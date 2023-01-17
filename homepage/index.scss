@@ -153,6 +153,25 @@ main {
     border: 1px solid $color-grey;
   }
 
+  &.video {
+    .image {
+      position: relative;
+      margin-bottom: $grid;
+
+      .icon-play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+      }
+
+      img {
+        margin: 0;
+      }
+    }
+  }
+
   img {
     margin-bottom: $grid;
   }
@@ -235,6 +254,56 @@ main {
   }
 
   .comments {
+    font-family: $sansFont;
+    font-size: 0.8rem;
+
+    a {
+      text-decoration: underline;
+    }
+
+    span {
+      opacity: 0.5;
+    }
+  }
+}
+
+.poll {
+  margin-bottom: $grid * 2;
+
+  .title {
+    display: block;
+    font-weight: bold;
+    margin-bottom: $grid;
+  }
+
+  img {
+    margin-bottom: $grid;
+  }
+
+  form {
+    label {
+      display: block;
+
+      margin-bottom: $grid/2;
+    }
+
+    input[type="radio"] {
+      margin: 0;
+      margin-right: $grid/4;
+    }
+
+    input[type="button"] {
+      border: 1px solid $color-grey-dark;
+      border-radius: 0;
+      background: white;
+      cursor: pointer;
+      margin-right: $grid/2;
+      margin-top: $grid/2;
+      padding: $grid/2 $grid;
+    }
+  }
+
+  .results {
     font-family: $sansFont;
     font-size: 0.8rem;
 

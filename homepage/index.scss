@@ -251,6 +251,10 @@ main {
       font-size: 1.6rem;
       line-height: 1;
     }
+
+    .description {
+      font-size: 1rem;
+    }
   }
 
   &.special {
@@ -311,6 +315,7 @@ main {
     margin: 0;
     margin-bottom: $grid/3;
     color: $color-grey-dark;
+    font-size: 0.8rem;
 
     .learn-more {
       text-decoration: underline;
@@ -362,6 +367,7 @@ main {
     margin: 0;
     margin-bottom: $grid;
     color: $color-grey-dark;
+    font-size: 0.8rem;
   }
 
   .comments {

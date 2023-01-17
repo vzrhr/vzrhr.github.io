@@ -7,9 +7,8 @@ $max-width: 1280px;
 $min-width: 1024px - $grid * 2;
 
 $color-main: #111;
-$color-grey: #c4c4c4;
-$color-grey-light: #eee;
-$color-grey-dark: #656565;
+$color-grey: #dbdbdb;
+$color-grey-dark: #505050;
 $color-red: #ed3f3a;
 
 * {
@@ -48,12 +47,8 @@ img {
 .main-header {
   margin-bottom: $grid * 2;
 
-  .vz-logo {
-    width: 160px;
-  }
-
   .top-wrapper {
-    border-bottom: 1px solid $color-grey-light;
+    border-bottom: 1px solid $color-grey;
     font-family: $sansFont;
     padding: $grid/2 $grid;
     color: $color-grey-dark;
@@ -62,10 +57,103 @@ img {
 
   .middle-wrapper {
     padding: $grid;
+
+    .left-col {
+      border-right: 1px solid $color-grey;
+      width: 60%;
+
+      @media only screen and (min-width: 1180px) {
+        width: 55%;
+      }
+    }
+
+    .right-col {
+      align-items: center;
+
+      width: 40%;
+
+      @media only screen and (min-width: 1180px) {
+        width: 45%;
+      }
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        font-family: $sansFont;
+        font-size: 0.8rem;
+        padding-left: $grid;
+
+        a {
+          display: block;
+
+          color: $color-grey-dark;
+
+          &:first-child {
+            margin-bottom: $grid/4;
+          }
+        }
+      }
+
+      .search {
+        position: relative;
+
+        width: 220px;
+
+        input {
+          border: 1px solid $color-grey;
+          border-radius: 0;
+          padding: $grid/4 $grid/2;
+          padding-right: 30px;
+          width: 100%;
+        }
+
+        button {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          z-index: 1;
+
+          background: transparent;
+          border: 0;
+          cursor: pointer;
+
+          transform: translateY(-50%);
+
+          img {
+            width: 14px;
+            height: 14px;
+          }
+        }
+      }
+    }
+
+    .vz-logo {
+      width: 160px;
+    }
+
+    .flash {
+      align-items: flex-start;
+
+      font-weight: bold;
+      font-size: 1.1rem;
+      line-height: 1.2;
+      width: calc(100% - 260px);
+      padding-right: $grid;
+
+      img {
+        width: 12px;
+      }
+
+      a {
+        width: calc(100% - 12px - 10px);
+      }
+    }
   }
 
   .featured-categories {
-    background-color: $color-grey-light;
+    background-color: $color-grey;
     font-family: $sansFont;
     font-weight: bold;
     font-size: 0.8rem;
@@ -190,7 +278,7 @@ main {
     margin-bottom: $grid/3;
 
     .time {
-      background: $color-grey-light;
+      background: $color-grey;
       margin-right: $grid/2;
       padding: 0 $grid/4;
     }
@@ -333,7 +421,12 @@ footer {
 }
 
 .full-width-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
   background-color: $color-grey;
+  border: 1px solid $color-grey;
   height: 100px;
   margin-bottom: $grid * 2;
   margin-left: -$grid;
@@ -341,6 +434,10 @@ footer {
 
   &.top {
     margin: 0;
+  }
+
+  img {
+    width: auto;
   }
 }
 
@@ -475,7 +572,7 @@ footer {
 }
 
 .popular {
-  background: $color-grey-light;
+  background: $color-grey;
   padding: $grid + 15px;
   margin-bottom: $grid * 2;
 

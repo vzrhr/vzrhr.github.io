@@ -274,6 +274,7 @@ main {
 
   .title {
     display: block;
+
     font-weight: bold;
     margin-bottom: $grid/3;
 
@@ -587,6 +588,10 @@ footer {
   .post {
     width: calc((100% - 90px) / 4);
     margin: 0;
+
+    &.no-image {
+      border-color: $color-grey-dark;
+    }
   }
 }
 

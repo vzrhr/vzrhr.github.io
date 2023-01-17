@@ -53,6 +53,27 @@ img {
     padding: $grid/2 $grid;
     color: $color-grey-dark;
     font-size: 0.7rem;
+
+    .right-col {
+      .icons {
+        margin-right: $grid * 2;
+
+        a {
+          margin-right: $grid;
+
+          img {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+
+      .links {
+        div {
+          margin-left: $grid / 2 * 4;
+        }
+      }
+    }
   }
 
   .middle-wrapper {

@@ -169,6 +169,12 @@ main {
     display: block;
     font-weight: bold;
     margin-bottom: $grid/3;
+
+    .time {
+      background: $color-grey-light;
+      margin-right: $grid/2;
+      padding: 0 $grid/4;
+    }
   }
 
   .description {

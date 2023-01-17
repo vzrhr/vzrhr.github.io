@@ -9,6 +9,7 @@ $min-width: 1024px - $grid * 2;
 $color-main: #111;
 $color-grey: #dbdbdb;
 $color-grey-dark: #505050;
+$color-grey-footer: #474747;
 $color-red: #ed3f3a;
 
 * {
@@ -438,8 +439,51 @@ main {
 }
 
 footer {
-  background-color: $color-grey;
-  height: 100px;
+  position: relative;
+
+  background-color: $color-grey-footer;
+  padding: $grid * 2 $grid;
+
+  .icons {
+    align-items: center;
+
+    a {
+      margin-right: $grid;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  .link {
+    font-weight: bold;
+    font-family: $sansFont;
+    color: white;
+  }
+
+  .copyright {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: $sansFont;
+    opacity: 0.7;
+    font-size: 0.8rem;
+
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    > span {
+      display: block;
+    }
+  }
 }
 
 .full-width-banner {

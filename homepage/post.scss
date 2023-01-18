@@ -1,99 +1,121 @@
-.post {
-  .col-middle {
-    width: calc(100% - 510px);
-    padding: 0 $grid;
-    margin: 0 $grid;
+.col-middle {
+  width: calc(100% - 510px);
+  padding: 0 $grid;
+  margin: 0 $grid;
+}
 
-    h1 {
-      margin: 0;
-      margin-bottom: $grid;
-      font-size: 2.2rem;
-      line-height: 1;
-    }
+.post-body {
+  h1 {
+    margin: 0;
+    margin-bottom: $grid;
+    font-size: 2.2rem;
+    line-height: 1;
+  }
 
-    .lead {
-      font-size: 1.3rem;
-      font-weight: bold;
-    }
+  .lead {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
 
-    figure {
-      margin: 0;
+  figure {
+    margin: 0;
+  }
+
+  figcaption {
+    font-family: $sansFont;
+    font-size: 0.7rem;
+  }
+
+  .image {
+    position: relative;
+
+    img {
+      width: 100%;
     }
 
     figcaption {
-      font-family: $sansFont;
-      font-size: 0.7rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: $grid/5 $grid/3;
+      color: white;
     }
+  }
 
-    .image {
-      position: relative;
-
-      img {
-        width: 100%;
-      }
-
-      figcaption {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-
-        background-color: rgba(0, 0, 0, 0.4);
-        padding: $grid/5 $grid/3;
-        color: white;
-      }
-    }
-
-    p {
-      font-size: 1.1rem;
-    }
-
-    blockquote {
-      position: relative;
-
-      font-style: italic;
-      font-size: 1.1rem;
-      color: $color-grey-dark;
-      margin: 0;
-      padding: 0;
-      padding-left: $grid * 4;
-
-      &:after {
-        content: "“";
-
-        position: absolute;
-        left: $grid/3 * 2;
-        top: 0;
-        font-size: 4rem;
-        line-height: 0.8;
-      }
-    }
-
-    h2 {
-      margin: 0;
-      margin-bottom: $grid;
-      font-size: 1.3rem;
-    }
+  p {
+    font-size: 1.1rem;
 
     a {
       text-decoration: underline;
     }
+  }
 
-    .iframe-resizer {
-      iframe {
-        display: block;
-        border: 0;
-        width: 100%;
-      }
+  blockquote {
+    position: relative;
 
-      figcaption {
-        margin-top: $grid/3;
-      }
+    font-style: italic;
+    font-size: 1.1rem;
+    color: $color-grey-dark;
+    margin: 0;
+    padding: 0;
+    padding-left: $grid * 4;
+
+    &:after {
+      content: "“";
+
+      position: absolute;
+      left: $grid/3 * 2;
+      top: 0;
+      font-size: 4rem;
+      line-height: 0.8;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    margin-bottom: $grid;
+    font-size: 1.3rem;
+  }
+
+  .iframe-resizer {
+    iframe {
+      display: block;
+      border: 0;
+      width: 100%;
     }
 
-    > .comments {
-      background: $color-grey;
-      height: 500px;
-      margin: $grid * 2 0;
+    figcaption {
+      margin-top: $grid/3;
+    }
+  }
+}
+
+.post-comments {
+  background: $color-grey;
+  height: 500px;
+  margin: $grid * 2 0;
+}
+
+.related {
+  margin-bottom: $grid * 2;
+
+  .col-big {
+    @media only screen and (min-width: 1180px) {
+      width: calc(100% - 180px);
+      padding-right: $grid;
+    }
+  }
+
+  .col-small {
+    display: none;
+    width: 180px;
+    // border-left: 1px solid $color-grey;
+    padding-left: $grid;
+
+    @media only screen and (min-width: 1180px) {
+      display: block;
     }
   }
 }

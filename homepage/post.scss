@@ -16,10 +16,17 @@
       font-weight: bold;
     }
 
+    figure {
+      margin: 0;
+    }
+
+    figcaption {
+      font-family: $sansFont;
+      font-size: 0.7rem;
+    }
+
     .image {
       position: relative;
-
-      margin: 0;
 
       img {
         width: 100%;
@@ -32,9 +39,7 @@
 
         background-color: rgba(0, 0, 0, 0.4);
         padding: $grid/5 $grid/3;
-        font-family: $sansFont;
         color: white;
-        font-size: 0.7rem;
       }
     }
 
@@ -71,6 +76,24 @@
 
     a {
       text-decoration: underline;
+    }
+
+    .iframe-resizer {
+      iframe {
+        display: block;
+        border: 0;
+        width: 100%;
+      }
+
+      figcaption {
+        margin-top: $grid/3;
+      }
+    }
+
+    > .comments {
+      background: $color-grey;
+      height: 500px;
+      margin: $grid * 2 0;
     }
   }
 }

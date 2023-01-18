@@ -12,6 +12,8 @@ $color-grey-dark: #505050;
 $color-grey-footer: #474747;
 $color-red: #ed3f3a;
 
+@import "post";
+
 * {
   box-sizing: border-box;
 }
